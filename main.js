@@ -1,6 +1,6 @@
 import config from './utils/config.js';
-import { launchTab1 } from './tms/tab1.js';
-import { launchTab2 } from './nepse/tab2.js';
+import { launchTab1 } from './nepse/tab1.js';
+import { launchTab2 } from './tms/tab2.js';
 import { printReport } from './utils/utils.js';
 
 (async () => {

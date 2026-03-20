@@ -30,7 +30,7 @@ export async function launchTab1() {
   const page = (await browser.pages())[0];
 
   // Navigate
-  console.log(`⬅  Navigating to: ${config.SITE_LEFT}`);
+  console.log(`⬅  Navigating to: ${config.SITE_FLOORSHEET}`);
   await page.goto(config.SITE_LEFT, {
     // @ts-ignore
     waitUntil: config.WAIT_UNTIL,

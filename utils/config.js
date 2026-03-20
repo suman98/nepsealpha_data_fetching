@@ -7,6 +7,7 @@ export default {
   SITE_LEFT: 'https://example.com',
   SITE_RIGHT: 'https://wikipedia.org',
 
+  SITE_FLOORSHEET: 'https://nepalstock.com.np/floor-sheet',
   // Puppeteer settings
   NAVIGATION_TIMEOUT: 30000,
   WAIT_UNTIL: 'networkidle2',
