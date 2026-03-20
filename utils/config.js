@@ -5,7 +5,7 @@ export default {
 
   // Sites to analyze
   SITE_LEFT: 'https://example.com',
-  SITE_RIGHT: 'https://wikipedia.org',
+  SITE_RIGHT: 'https://tms32.nepsetms.com.np/login',
 
   SITE_FLOORSHEET: 'https://nepalstock.com.np/floor-sheet',
   // Puppeteer settings

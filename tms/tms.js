@@ -15,14 +15,17 @@ const targetSite = config.SITE_RIGHT;
  * @returns {Promise<{ browser, page, analysis }>}
  */
 export default async function launchTab2() {
-
-  const halfWidth = Math.floor(config.SCREEN_WIDTH / 2);
+  const SCREEN_MARGIN = 24;
+  const WINDOW_GAP = 8;
+  const availableWidth = config.SCREEN_WIDTH - SCREEN_MARGIN * 2 - WINDOW_GAP;
+  const halfWidth = Math.floor(availableWidth / 2);
+  const rightWindowX = SCREEN_MARGIN + halfWidth + WINDOW_GAP;
 
   const browser = await puppeteer.launch({
     headless: false,
     args: [
       `--window-size=${halfWidth},${config.SCREEN_HEIGHT}`,
-      `--window-position=${halfWidth},0`,
+      `--window-position=${rightWindowX},0`,
       '--no-sandbox',
       '--disable-setuid-sandbox',
     ],
