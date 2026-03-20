@@ -1,20 +1,20 @@
 import config from './utils/config.js';
-import { launchTab1 } from './nepse/tab1.js';
+import floorsheetTab from './nepse/floorsheet.js';
 import { launchTab2 } from './tms/tab2.js';
 import { printReport } from './utils/utils.js';
 
+let browserLeft = null;
+let browserRight = null;
+
 (async () => {
   console.log('🚀 Starting Side-by-Side Analyzer...\n');
-
-  let browserLeft = null;
-  let browserRight = null;
 
   try {
     // =============================================
     // Launch both windows in parallel
     // =============================================
     const [resultLeft, resultRight] = await Promise.all([
-      launchTab1(),
+      floorsheetTab(),
       launchTab2(),
     ]);
 
@@ -49,5 +49,11 @@ import { printReport } from './utils/utils.js';
 // Graceful shutdown on Ctrl+C
 process.on('SIGINT', async () => {
   console.log('\n🛑 Shutting down...');
+  try {
+    if (browserLeft) await browserLeft.close();
+    if (browserRight) await browserRight.close();
+  } catch (e) {
+    // Ignore errors during forced shutdown
+  }
   process.exit(0);
 });

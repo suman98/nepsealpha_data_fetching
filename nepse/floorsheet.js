@@ -6,7 +6,7 @@ import { analyzePage } from '../utils/utils.js';
  * Launches the LEFT browser window, navigates, and analyzes
  * @returns {Promise<{ browser, page, analysis }>}
  */
-export async function launchTab1() {
+export default async function launchTab1() {
   console.log('⬅  Launching LEFT window...');
 
   const halfWidth = Math.floor(config.SCREEN_WIDTH / 2);
@@ -31,7 +31,7 @@ export async function launchTab1() {
 
   // Navigate
   console.log(`⬅  Navigating to: ${config.SITE_FLOORSHEET}`);
-  await page.goto(config.SITE_LEFT, {
+  await page.goto(config.SITE_FLOORSHEET, {
     // @ts-ignore
     waitUntil: config.WAIT_UNTIL,
     timeout: config.NAVIGATION_TIMEOUT,
