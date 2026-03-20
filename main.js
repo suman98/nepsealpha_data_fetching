@@ -1,6 +1,6 @@
 import config from './utils/config.js';
 import floorsheetTab from './nepse/floorsheet.js';
-import { launchTab2 } from './tms/tab2.js';
+import tmsTab from './tms/tms.js';
 import { printReport } from './utils/utils.js';
 
 let browserLeft = null;
@@ -15,7 +15,7 @@ let browserRight = null;
     // =============================================
     const [resultLeft, resultRight] = await Promise.all([
       floorsheetTab(),
-      launchTab2(),
+      tmsTab(),
     ]);
 
     browserLeft = resultLeft.browser;

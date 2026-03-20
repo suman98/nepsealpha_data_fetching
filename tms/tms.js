@@ -14,7 +14,7 @@ const targetSite = config.SITE_RIGHT;
  * Launches the RIGHT browser window, navigates, and analyzes
  * @returns {Promise<{ browser, page, analysis }>}
  */
-export async function launchTab2() {
+export default async function launchTab2() {
 
   const halfWidth = Math.floor(config.SCREEN_WIDTH / 2);
 
