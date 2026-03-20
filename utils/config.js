@@ -1,0 +1,13 @@
+export default {
+  // Screen resolution
+  SCREEN_WIDTH: 1920,
+  SCREEN_HEIGHT: 1080,
+
+  // Sites to analyze
+  SITE_LEFT: 'https://example.com',
+  SITE_RIGHT: 'https://wikipedia.org',
+
+  // Puppeteer settings
+  NAVIGATION_TIMEOUT: 30000,
+  WAIT_UNTIL: 'networkidle2',
+};
